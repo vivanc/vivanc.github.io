@@ -1,0 +1,256 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+viewpoint breakpoints:
+
+desktop: 1200px;
+laptop: 1024px;
+tablet:768px;
+phone: 480px;
+*/
+
+/*
+MAIN COLOR: #74b816
+GREY COLOR: #495057
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+GENERAL STYLE
+*/
+body {
+  color: #495057;
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  width: 100%;
+}
+
+.container-sub {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  /*make it above content, in the stacking order on top*/
+  z-index: 3;
+  /* background-color: peru; */
+  font-size: 18px;
+  padding: 32px 16px 32px 16px;
+}
+
+.nav-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-bar ul a {
+  display: block;
+  padding: 10px;
+}
+
+.nav-bar .home {
+  float: left;
+  display: block;
+  padding: 10px;
+}
+
+.nav-bar .menu {
+  clear: both;
+  /*on the default mobile view, set max-height to 0 so it doesn't show, and set the height when click the button*/
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.nav-bar .menu-icon {
+  padding: 20px;
+  /*it is parent container for the child span so we later can use fixed position to manipulate child element span*/
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+/*make hamburger menu bar*/
+.nav-bar .menu-icon .nav-icon {
+  background: #adb5bd;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+.nav-bar .menu-icon .nav-icon:before {
+  background: #adb5bd;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+.nav-bar .menu-icon .nav-icon:after {
+  background: #adb5bd;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+/*make checkbox disapear*/
+.nav-bar .menu-btn {
+  display: none;
+}
+
+/*when menu checked, the menu shows */
+.nav-bar .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+/*when click the menu bar, it shows X*/
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon {
+  background-color: transparent;
+}
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  -webkit-transform: rotate(-45deg);
+  top: 0;
+}
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  -webkit-transform: rotate(45deg);
+  top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    background-color: gold;
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
+
+  .nav-bar {
+    width: 600px;
+  }
+
+  .nav-bar li {
+    float: left;
+  }
+
+  .nav-bar li a {
+    /* padding: 20px 30px; */
+  }
+
+  .nav-bar .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .nav-bar .menu-icon {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    background-color: pink;
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
+
+  .nav-bar {
+    width: 1000px;
+  }
+}
+
+/*
+COMPONENT STYLE
+*/
+
+h1 {
+  font-size: 36px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+p {
+  margin: 24px 0;
+  letter-spacing: 0.5px;
+}
+
+article ul {
+  margin: 30px 50px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+article li {
+  padding: 1.2px;
+  text-align: center;
+}
+
+a:link {
+  color: #adb5bd;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:visited {
+  color: #adb5bd;
+}
+
+a:hover,
+a:active {
+  color: #74b816;
+  font-style: italic;
+  /* transition-duration: 0.35s; */
+}
+
+footer {
+  margin-top: 24px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  stroke: #495057;
+}
+
+img {
+  margin-top: 100px;
+}

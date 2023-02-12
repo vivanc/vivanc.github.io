@@ -1,0 +1,110 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN COLOR: #74b816
+GREY COLOR: #495057
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+GENERAL STYLE
+*/
+body {
+  color: #495057;
+  font-family: "Manrope", sans-serif;
+  /* padding: 10px; */
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 850px;
+  display: grid;
+  grid-template-columns: 850px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: left;
+}
+
+.header-sub {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+COMPONENT STYLE
+*/
+
+h1 {
+  font-size: 36px;
+  letter-spacing: -1px;
+  /* text-align: left; */
+}
+
+article {
+  width: 100%;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+li {
+  font-size: 18px;
+  padding: 8px;
+  margin-left: 100px;
+}
+
+.list-2 {
+  margin: 0 40px;
+}
+
+.list-3 {
+  margin: 0 60px;
+  list-style-type: square;
+}
+
+.skill {
+  color: #74b816;
+  /* margin-bottom: 40px; */
+}
+
+.back {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 32px;
+}
+
+a:link {
+  color: #adb5bd;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:visited {
+  color: #adb5bd;
+}
+
+a:hover,
+a:active {
+  color: #74b816;
+  font-style: italic;
+}

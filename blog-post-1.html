@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blog-post-1.css" />
+    <title>blog-post-1</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="blog-page.html" class="back">Back</a>
+      <header class="header">
+        <h1>My first ever code that helped me slack my job</h1>
+        <div class="header-sub">
+          <p class="skill">#python #pandas</p>
+          <p class="date">Jan.20 2023</p>
+        </div>
+      </header>
+      <article>
+        <p>
+          It was July 2020 when my senior left the company, he handed over a
+          task that would require him 1-2hr to do a manual ETL using excel. This
+          weekly task accepts zero errors because the data we were dealing with
+          was global sales forecasts that needed to be published. There is no
+          room for any stupid errors.
+        </p>
+        <p>
+          My senior had been doing it manually for the past 4 years to a point
+          that he could even get it done with his eyes closed, but that required
+          at least 1 year of practicing and attention to detail.
+        </p>
+
+        <p>-----</p>
+
+        <p>The manual ETL process went like this:</p>
+
+        <ol>
+          <li class="list-2">
+            I would receive emails from 6 regional sales operations consisting
+            of 13 excel files (sometimes more because there might be last-minute
+            updates).
+
+            <br /><br />It is worth mentioning, every single excel file was not
+            formatted the same, it is obviously difficult to force everyone to
+            use the exact same excel template when such collection is not
+            conducted in the system.
+          </li>
+          <li class="list-2">
+            My job is to consolidate everything into one .csv file and load it
+            into our database.
+
+            <br /><br />Now, in order to consolidate all into a .csv file, I
+            have to clean the files. The common areas I have to clean were
+            duplicate lines, unnecessary data, inconsistent cell formats such as
+            date and unit, and languages used such as using short-term AMR
+            instead of America.
+          </li>
+        </ol>
+        <p>-----</p>
+
+        <p>
+          The manual way of doing it is to clean each file individually, such as
+          open the file, pivot it (so duplicates are combined), rename the
+          region names, make sure the units are in thousands etc. Repeat 13
+          times, and at the end, copy all the clean files into one .csv file.
+          There were a lot more manipulation needed than mentioned.
+        </p>
+
+        <p>
+          The problem with this approach was first, it is prone to human errors,
+          and second, it is time-consuming which can be avoided.
+        </p>
+
+        <p>-----</p>
+        <p>
+          I wanted to find a better way to get this task done. So I coded up my
+          first ever python program that help me achieve it. The structure of
+          the script is far from perfect, but it gave me what I needed to get
+          the job done.
+        </p>
+
+        <p>The layout of the program is:</p>
+
+        <ul>
+          <li>
+            In Jupyter notebook,
+            <ul>
+              <li class="list-2">Create folder A to place input files</li>
+              <li class="list-2">Create folder B to place output files</li>
+            </ul>
+          </li>
+          <li>
+            In the code,
+            <ul>
+              <li class="list-2">
+                Create one cell for each input file, such as:
+              </li>
+              <li class="list-3">
+                Europe cell: dealing with sales amount from my company to
+                distributors
+              </li>
+              <li class="list-3">
+                Europe cell: dealing with sales amount from distributors to end
+                customers
+              </li>
+              <li class="list-2">And repeat for all regions.. such as:</li>
+              <li class="list-3">
+                Greater China cell: dealing with sales amount from my company to
+                distributors
+              </li>
+              <li class="list-3">
+                Greater China cell: dealing with sales amount from distributors
+                to end customers
+              </li>
+              <li class="list-2">
+                Plus, one special end customer treated separately from the
+                regional division
+              </li>
+              <li class="list-2">
+                Finally, use glob os to concatenate all output files in folder
+                B, and output the consolidated .csv file
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          I wrote it using the pandas library to do data transformations such as
+          renaming the data, pivoting, unpivoting, string slicing, create a
+          standard format.
+        </p>
+
+        <p>
+          At the end of the code, my weekly task was done in less than 20
+          minutes. Most of the time I spent was on downloading and uploading
+          files to Jupyter notebook, and doing sanity check.
+        </p>
+
+        <p>-----</p>
+
+        <p>What I’ve learned from the experience:</p>
+
+        <ul>
+          <li class="list-2">
+            My job can be easily replaced by some programs, though the domain
+            knowledge can be difficult to obtain by the computer, a lot of what
+            I did from my job can be easily accomplished by a well-designed
+            program.
+          </li>
+          <li class="list-2">
+            There are unlimited possibilities and learnings outside of what I’ve
+            known from my past experiences. It is necessary to break out of the
+            bubble I was in and continue learning.
+          </li>
+        </ul>
+        <p>-----</p>
+        <p>
+          The moment I showed my ex-colleague how one click can achieve what
+          used to take 1 hour, I felt extremely proud and happy. The moment that
+          will always push me forward.
+        </p>
+        <p>
+          Below are some screenshots of the Python script, I’ve blurred some
+          portion of it because of some sensitive information.
+        </p>
+
+        <img src="source/blog-post-1-python1.png" />
+        <img src="source/blog-post-1-python2.png" />
+        <img src="source/blog-post-1-python3.png" />
+      </article>
+    </div>
+  </body>
+</html>
