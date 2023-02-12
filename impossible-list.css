@@ -9,47 +9,177 @@ GENERAL STYLE
 */
 
 .container {
-  margin-right: auto;
+  width: 100%;
+  /* margin-right: auto;
   margin-left: auto;
   width: 850px;
   display: grid;
   grid-template-columns: 850px;
   justify-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 32px; */
 }
 
 .container-sub {
+  width: 70%;
+  margin-left: auto;
   margin-right: auto;
+  display: grid;
+  justify-items: left;
+  /* margin-right: auto;
   margin-left: auto;
   width: 580px;
   display: grid;
   grid-template-columns: 580px;
-  justify-items: left;
+  justify-items: left; */
   /* justify-content: center; */
-  gap: 12px;
+  /* gap: 12px; */
 }
 
 .nav-bar {
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  width: 850px;
-  justify-content: space-between;
-  /* align-items: center; */
-  /* margin: auto; */
-  padding: 32px;
+  position: fixed;
+  width: 100%;
+  /*make it above content, in the stacking order on top*/
+  z-index: 3;
+  background-color: white;
   font-size: 18px;
+  padding: 24px 16px 24px 16px;
 }
 
-.nav-bar-left {
-  display: flex;
+.nav-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
-.nav-bar-right {
-  display: flex;
-  width: 360px;
-  justify-content: space-between;
+.nav-bar ul a {
+  display: block;
+  padding: 10px;
+}
+
+.nav-bar .home {
+  float: left;
+  display: block;
+  padding: 10px;
+}
+
+.nav-bar .menu {
+  clear: both;
+  /*on the default mobile view, set max-height to 0 so it doesn't show, and set the height when click the button*/
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.nav-bar .menu-icon {
+  padding: 20px;
+  /*it is parent container for the child span so we later can use fixed position to manipulate child element span*/
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+/*make hamburger menu bar*/
+.nav-bar .menu-icon .nav-icon {
+  background: #adb5bd;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+.nav-bar .menu-icon .nav-icon:before {
+  background: #adb5bd;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+.nav-bar .menu-icon .nav-icon:after {
+  background: #adb5bd;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+/*make checkbox disapear*/
+.nav-bar .menu-btn {
+  display: none;
+}
+
+/*when menu checked, the menu shows */
+.nav-bar .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+/*when click the menu bar, it shows X*/
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon {
+  background-color: transparent;
+}
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  -webkit-transform: rotate(-45deg);
+  top: 0;
+}
+.nav-bar .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  -webkit-transform: rotate(45deg);
+  top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    /* background-color: gold; */
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
+
+  .nav-bar {
+    width: 600px;
+  }
+
+  .nav-bar li {
+    float: left;
+  }
+
+  .nav-bar li a {
+    /* padding: 20px 30px; */
+  }
+
+  .nav-bar .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .nav-bar .menu-icon {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    /* background-color: pink; */
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
+
+  .nav-bar {
+    width: 1000px;
+  }
 }
 
 body {
@@ -58,8 +188,8 @@ body {
 }
 
 h1 {
-  margin-bottom: 12px;
-  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-top: 100px;
 }
 
 ol {

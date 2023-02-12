@@ -28,24 +28,62 @@ body {
 }
 
 .container {
-  margin-right: auto;
+  width: 100%;
+  /* margin-right: auto;
   margin-left: auto;
   width: 850px;
   display: grid;
   grid-template-columns: 850px;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; */
+}
+
+.container-sub {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .header {
+  width: 70%;
   display: grid;
+  margin: 0 auto;
+  /* display: grid;
   grid-template-columns: 100%;
-  justify-content: left;
+  justify-content: left; */
 }
 
 .header-sub {
   display: flex;
   justify-content: space-between;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    /* background-color: gold; */
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    /* background-color: pink; */
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .container-sub {
+    width: 70%;
+  }
 }
 
 /*
@@ -56,10 +94,6 @@ h1 {
   font-size: 36px;
   letter-spacing: -1px;
   /* text-align: left; */
-}
-
-article {
-  width: 100%;
 }
 
 p {
@@ -90,7 +124,7 @@ li {
 .back {
   font-size: 18px;
   text-align: center;
-  padding-top: 32px;
+  padding: 32px 0;
 }
 
 a:link {
@@ -107,4 +141,9 @@ a:hover,
 a:active {
   color: #74b816;
   font-style: italic;
+}
+
+img {
+  width: 600px;
+  height: auto;
 }
