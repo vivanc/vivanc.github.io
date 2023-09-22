@@ -1,2 +1,2 @@
-# Click => https://vivanc.github.io/
+# Click to access: https://vivanc.github.io/
 
