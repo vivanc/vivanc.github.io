@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blog-post-1.css" />
+    <title>blog-post-4</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-sub">
+        <header class="header">
+          <a href="../blog-page.html" class="back">Back</a>
+          <h1>nav vs navLink, navigate vs useNavigate </h1>
+          <div class="header-sub">
+            <p class="skill">#react #nav #navlink #navigate #usenavigate</p>
+            <p class="date">Oct.12 2023</p>
+          </div>
+        </header>
+        <article class="content">
+          <p>
+            I wanted to understand the difference between the 4 so I did the following.
+            <ul>
+              <li>
+                'nav'' is a html like tag in jsx, is acts as a tag
+              </li>
+              <li>
+                'navLink' is similar to 'nav' tag but with more functionality, it can set the link to active or inactive to style it when user is on the link
+              </li>
+              <li>
+                'navigate' is a component in react-router-dom, it takes user to the 'to' attribute link as you set it. It has 3 attributes: to="/dashboard" && state={{}} && replace={true}. state && replace (boolean) both attributes are optional. state lets you to pass prop to the component to render. replace gives you session that user was on before.
+              </li>
+              <li>
+                'useNavigate' is a hook that was shipped with react router version 6. it is essentially the same as navigate, however navigate exists so ES6 can use navigat with class-based react components, because ES6 does not support hooks.
+              </li>
+            </ul>
+          </p>
+
+          <p>-----</p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
