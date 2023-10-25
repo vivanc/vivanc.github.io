@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../blog-post-1.css" />
+    <title>blog-post-4</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-sub">
+        <header class="header">
+          <a href="../blog-page.html" class="back">Back</a>
+          <h1>finaly understand useContext</h1>
+          <div class="header-sub">
+            <p class="skill">#react #createContext #useContext #useEffect #useState #hooks</p>
+            <p class="date">Oct.25 2023</p>
+          </div>
+        </header>
+        <article class="content">
+          <p>
+            Today I was working on google Oauth sign up function because the first time I pushed the code, I placed userEffect('to initiate google sign up button') in the wrong component causing the google sign up button only renders when the page is refresh. 
+            </p>
+            <p>
+              I've solved the problem by truly understand how to use createContext and useContext. The reason why I need to use context is because I need to be able to access user login token to maintain user profile.
+            </p>
+            <p>
+              The followings are the steps:
+            </p>
+            <p>
+
+            
+            <ul>
+              <li>
+                Create a context file inside contexts folder, name it usercontext. User 'createContext' to create a 'UserContext', remember to export it.
+              </li>
+              <li>
+                You want the states (= user states) to  live inside app.js so you can set it as 'value' and pass it to 'UserContext.Provider' and wrap it around the routes that need to access it. Be mindful that you can only wrap routes not inside route because 'UserContext.Provider' is not a route!
+                
+              </li>
+              <li>
+                Once you have value set up, you can useContext in any component that is wrapped in the provider. Go to the component (say, sign-up.component), import useContext and setup 'useContext' to retrieve the states you setup in the app.js, do whatever setUser or things you need to change the state.
+              </li>
+            </ul>
+          </p>
+          <p>The takeaway is to understand it is to use value as a prop to use the states globally.</p>
+
+          <p>-----</p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
