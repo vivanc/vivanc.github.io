@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../blog-post-1.css" />
+    <title>blog-post-6</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-sub">
+        <header class="header">
+          <a href="../blog-page.html" class="back">Back</a>
+          <h1>react sidebar, nested routes, outlet</h1>
+          <div class="header-sub">
+            <p class="skill">
+              #react #sidebar #routes #react-router-dom #outlet #nested-routes
+            </p>
+            <p class="date">Oct.31 🎃 2023</p>
+          </div>
+        </header>
+        <article class="content">
+          <p>
+            I was working on rendering react sidebar because we structured our
+            project nav bar on the side.
+          </p>
+          <p>
+            The crutial step to make it work is to place home-page nested routes
+            (outlet) on the wherever layout you want the nested routes to be
+            rendered (ie, in the project, place outlet in the Col. tag). Next is
+            to create a nav data array so in the home-page, I can map through
+            the array and render the route path by accessing it from the array.
+          </p>
+          <p>
+            Other concept I've learned from working on this feature is to have a
+            'page not found' route and 'protected route'.
+          </p>
+          <p>
+            For the 'protected route', I used ternary operation to allow access
+            to the routes that are protected. Basically use Outlet to allow
+            protected routes to show if true, and navigate to log in page if
+            false.
+          </p>
+          <p>
+            The takeaway is to use all i've learned such as ternary operator,
+            map array, nested routes and outlet'.
+          </p>
+
+          <p>-----</p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
