@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../blog-post-1.css" />
+    <title>blog-post-7</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-sub">
+        <header class="header">
+          <a href="../blog-page.html" class="back">Back</a>
+          <h1>aws s3 upload, presigned url, display</h1>
+          <div class="header-sub">
+            <p class="skill">
+              #react #aws #presignedurl #s3 #upload #images #download #display
+            </p>
+            <p class="date">Nov. 16 2023</p>
+          </div>
+        </header>
+        <article class="content">
+          <p>
+            AWS integration can be a pain in the ass if one is not clear about the flow of data.
+            I banged my head in the wall for a week, figured out how to do single component with upload and download to display, then I banged my head again for 3 days to implement it to existing form componet on my project. In between I took a break to build search function. Now looking back, I see some improvements I can do in the future.
+          </p>
+          <p>
+            The overview of the process is: 
+            <ul>
+              <li>create s3 bucket, make it private bucket</li>
+              <li>create bucket/resource policy to be attached to IAM users</li>
+              <li>create IAM user (such as the application/port I am using to access aws) and other user</li>
+              <li>set up .env so aws sdk can automatically read the access keys</li>
+              <li>understand how formData works in a form, formdata is key/val pairs</li>
+              <li>understand how to read the entries in the formData to make sure you are sending the right data to the server using axios</li>
+              <li>understand how to generate presigned url and how it should be structures in both post request and get request</li>
+              <li>know that iamge_name from the file you append in the formData is used to generate presigned url so need to insert image_name to the database table</li>
+              <li>know that once presigned url is generated, need to insert it to the database table so it can be rendered</li>
+              <li>understand that there will be multiple images in s3 so need to for loop throug all the images and generate presigned url and insert it to the database table, all above on one item level</li>
+              <li>the flow goes as: in post request, becasue you are getting the image from front end, that's where you get the image_name, so in post request, insert image_name in the database table. then in get request, becasue you need to generate presigned url everytime user requests, it has to be set in get request, so loop through all images and retrieve image_name and call aws sdk generate presigned url function to generate presigned url and insert it into column image_url in the database table</li>
+              <li>anywhere that needs to access the image_url (such as view recipe which is using different api- get id), needs to implement presinged url generator</li>
+            </ul>
+          </p>
+          <p>
+            One takeaway I'd say is to stick to any tutorial I find in the first place and really think through the process to see if it is applicable to my use. I spent a lot of time being distracted by other noises such as parsing the data to the database and restricted by the existing useState.
+          </p>
+          <p>
+            Final thought is to always think through the data flow process, along the process, know the alternatives so I have a better understanding if the way I am thinking is common use or no.
+          </p>
+
+          <p>-----</p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
