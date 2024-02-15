@@ -57,16 +57,19 @@ GENERAL STYLE
   justify-items: left;
 }
 
+/*
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  /* grid-template-rows: masonry; */
+  grid-template-rows: masonry;
   grid-gap: 15px;
-}
+}*/
 
 .gallery img {
   width: 100%;
   border-radius: 4%;
+  margin-top: 1rem;
 }
 
 .nav-bar {
@@ -208,6 +211,10 @@ GENERAL STYLE
 
   .container-sub {
     width: 70%;
+  }
+
+  .gallery {
+    column-count: 3;
   }
 
   .nav-bar {
